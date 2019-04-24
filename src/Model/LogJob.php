@@ -4,7 +4,7 @@ namespace Cubitworx\Laravel\Queue\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LogQueueJob extends Model {
+class LogJob extends Model {
 
 	protected $casts = [
 		'payload' => 'array'

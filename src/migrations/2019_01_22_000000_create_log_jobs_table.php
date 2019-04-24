@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLogQueueJobsTable extends Migration {
+class CreateLogJobsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateLogQueueJobsTable extends Migration {
 	 * @return void
 	 */
 	public function up() {
-		Schema::create('log_queue_jobs', function (Blueprint $table) {
+		Schema::create('log_jobs', function (Blueprint $table) {
 			$table->bigIncrements('id');
 
 			$table->string('connection');
@@ -32,7 +32,7 @@ class CreateLogQueueJobsTable extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::dropIfExists('log_queue_jobs');
+		Schema::dropIfExists('log_jobs');
 	}
 
 }

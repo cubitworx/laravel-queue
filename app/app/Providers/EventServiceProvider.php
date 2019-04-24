@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider {
@@ -12,8 +11,17 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
-		'App\Events\Event' => [
-			'App\Listeners\EventListener',
+		\Cubitworx\Laravel\Queue\Events\JobFailedEvent::class => [
+			\App\Listeners\JobFailedListener::class,
+		],
+		\Cubitworx\Laravel\Queue\Events\JobProcessedEvent::class => [
+			\App\Listeners\JobProcessedListener::class,
+		],
+		\Illuminate\Queue\Events\JobFailed::class => [
+			\Cubitworx\Laravel\Queue\Listeners\JobFailedListener::class,
+		],
+		\Illuminate\Queue\Events\JobProcessed::class => [
+			\Cubitworx\Laravel\Queue\Listeners\JobProcessedListener::class,
 		],
 	];
 
