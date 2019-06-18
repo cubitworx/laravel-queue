@@ -3,7 +3,6 @@
 namespace App\Listeners;
 
 use Cubitworx\Laravel\Queue\Events\JobFailedEvent;
-use Illuminate\Support\Facades\Notification;
 
 class JobFailedListener {
 

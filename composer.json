@@ -1,6 +1,6 @@
 {
 	"name": "cubitworx/laravel-queue",
-	"version": "1.0.0-alpha.2",
+	"version": "1.0.0",
 	"description": "Queue functionality for Laravel apps",
 	"keywords": ["laravel", "queue"],
 	"license": "MIT",
